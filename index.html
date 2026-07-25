@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мультфильмы для A0–A2 — Stellas Deutsch</title>
+<meta name="description" content="Мультфильмы для A0–A2: 32 мультфильмов и сериалов на немецком с постерами, темами грамматики и ссылками на просмотр (30 — бесплатно). Фильтры, сортировка и группировка.">
+<meta property="og:title" content="Мультфильмы для A0–A2 — Stellas Deutsch">
+<meta property="og:description" content="Мультфильмы для A0–A2: 32 мультфильмов и сериалов на немецком с постерами, темами грамматики и ссылками на просмотр (30 — бесплатно). Фильтры, сортировка и группировка.">
+<meta property="og:type" content="website">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="brand" href="./">
+      <span class="brand__mark"><img src="logo.jpg" alt="Stellas Deutsch"></span>
+      <span class="brand__name">Stellas Deutsch<span>Мультфильмы</span></span>
+    </a>
+
+    <div class="levelpick">
+      <small>Уровень</small>
+      <b>A0–A2</b>
+    </div>
+
+    <label class="searchbox">
+      <span class="searchbox__ico">🔍</span>
+      <input id="search" type="search" placeholder="Найти мультфильм, тему или грамматику…" autocomplete="off">
+    </label>
+
+    <nav class="topnav">
+      <a href="#catalog">Каталог</a>
+      <a href="#howto">Как смотреть</a>
+    </nav>
+
+    <a class="btn-switch" href="https://stellasdeutsch-dev.github.io/stellas-cartoons-b1-c1/">Уровни B1–C1 →</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div>
+      <span class="hero__kicker">Stellas Deutsch · Уровни A0–A2</span>
+      <h1>Zeichentrick<br>auf Deutsch</h1>
+      <div class="hero__badges">
+        <span class="hero__badge"><i>✓</i> <b id="s-total">0</b>&nbsp;мультфильма в подборке</span>
+        <span class="hero__badge"><i>▶</i> <b id="s-free">0</b>&nbsp;можно смотреть бесплатно</span>
+      </div>
+      <p class="hero__sub">Немецкий с нуля через мультфильмы: короткие серии, простая речь, повторяющиеся фразы.</p>
+      <a class="hero__cta" href="#catalog">Открыть каталог <span>→</span></a>
+    </div>
+    <div class="hero__art" id="hero-art">
+      <img alt="" src="" loading="eager">
+      <img alt="" src="" loading="eager">
+      <img alt="" src="" loading="eager">
+    </div>
+  </section>
+
+  <section class="feats">
+    <button class="feat" data-quick="first">
+      <div>
+        <h3>С чего начать</h3>
+        <p>Самые лёгкие тайтлы уровня A0, от коротких к длинным</p>
+      </div>
+      <span class="feat__go">→</span>
+      <span class="feat__emoji">🎬</span>
+    </button>
+    <button class="feat" data-quick="grammar">
+      <div>
+        <h3>Под свою<br>грамматику</h3>
+        <p>Фильтр по теме: Präsens, Perfekt, Konjunktiv II</p>
+      </div>
+      <span class="feat__go">→</span>
+      <span class="feat__emoji">📘</span>
+    </button>
+    <button class="feat" data-quick="free">
+      <div>
+        <h3>Только<br>бесплатное</h3>
+        <p>ARD, ZDF, KiKA и официальные каналы YouTube</p>
+      </div>
+      <span class="feat__go">→</span>
+      <span class="feat__emoji">🎁</span>
+    </button>
+    <button class="feat" data-quick="short">
+      <div>
+        <h3>Короткие<br>серии</h3>
+        <p>5–15 минут в день — реальный формат привычки</p>
+      </div>
+      <span class="feat__go">→</span>
+      <span class="feat__emoji">⏱</span>
+    </button>
+  </section>
+
+  <section class="section" id="catalog">
+    <div class="section__head">
+      <h2>Подберите мультфильм под свою тему</h2>
+      <p>Выберите тему, уровень и темп речи — каталог перестроится под вас.</p>
+    </div>
+
+    <div class="chips" id="f-themes"></div>
+
+    <div class="toolbar">
+      <div class="toolbar__row">
+        <div class="field">
+          <label>Уровень</label>
+          <div class="pillset" id="f-levels"></div>
+        </div>
+        <div class="field">
+          <label>Формат</label>
+          <div class="pillset" id="f-formats"></div>
+        </div>
+        <div class="field">
+          <label>Темп речи</label>
+          <div class="pillset" id="f-speeds"></div>
+        </div>
+      </div>
+
+      <div class="toolbar__row" style="margin-top:16px">
+        <div class="field">
+          <label>Грамматика</label>
+          <select id="f-grammar"></select>
+        </div>
+        <div class="field">
+          <label>Сортировка</label>
+          <select id="sort">
+            <option value="level">По уровню ↑</option>
+            <option value="level-desc">По уровню ↓</option>
+            <option value="title">По алфавиту</option>
+            <option value="duration">По длине серии ↑</option>
+            <option value="duration-desc">По длине серии ↓</option>
+            <option value="year-desc">Сначала новые</option>
+            <option value="year">Сначала старые</option>
+            <option value="speed">По темпу речи</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Группировка</label>
+          <select id="group">
+            <option value="level">По уровню</option>
+            <option value="format">По формату</option>
+            <option value="speed">По темпу речи</option>
+            <option value="theme">По теме</option>
+            <option value="grammar">По грамматике</option>
+            <option value="access">По доступу</option>
+            <option value="none">Без группировки</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Доступ</label>
+          <label class="switch">
+            <input type="checkbox" id="free-only"><i></i> Только бесплатное
+          </label>
+        </div>
+      </div>
+
+      <div class="toolbar__foot">
+        <span class="count" id="count"></span>
+        <button class="btn-reset" id="reset">Сбросить все фильтры</button>
+      </div>
+    </div>
+
+    <div id="results"></div>
+  </section>
+
+  <section class="section">
+    <div class="stats">
+      <div class="stat"><b id="s-total2">—</b><span>мультфильмов в каталоге</span></div>
+      <div class="stat"><b id="s-levels">—</b><span>уровня внутри подборки</span></div>
+      <div class="stat"><b id="s-series">—</b><span>сериалов с короткими сериями</span></div>
+      <div class="stat"><b id="s-free2">—</b><span>доступны бесплатно</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="howto">
+    <div class="section__head">
+      <h2>Как смотреть, чтобы это работало</h2>
+      <p>Три правила, которые превращают просмотр мультфильмов в настоящую практику языка.</p>
+    </div>
+    <div class="howto">
+      <div class="how"><i>🔁</i><h3>Одна серия — три раза</h3><p>Первый просмотр без субтитров, второй — с немецкими, третий — снова без. На третьем разе вы услышите то, что пропустили.</p></div>
+      <div class="how"><i>🗣</i><h3>Повторяйте вслух</h3><p>Останавливайте на короткой фразе и повторяйте за героем. На A0–A2 фразы короткие — это самый быстрый способ поставить произношение.</p></div>
+      <div class="how"><i>📓</i><h3>5 слов, не 50</h3><p>Из серии выписывайте максимум пять слов — те, что повторились несколько раз. Остальное придёт само на следующих сериях.</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <div>
+      <div class="brand">
+        <span class="brand__mark"><img src="logo.jpg" alt="Stellas Deutsch"></span>
+        <span class="brand__name">Stellas Deutsch<span>Мультфильмы</span></span>
+      </div>
+      <p style="max-width:320px;color:#c3c6e4;font-size:14.5px;margin:14px 0 0">
+        Подборки видео для изучения немецкого языка. Постеры и данные — The Movie Database (TMDB).
+      </p>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h5>Каталоги</h5>
+        <ul>
+          <li><a href="https://stellasdeutsch-dev.github.io/stellas-cartoons-b1-c1/">Уровни B1–C1</a></li>
+          <li><a href="#catalog">Этот каталог</a></li>
+          <li><a href="#howto">Как смотреть</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Бесплатные ресурсы</h5>
+        <ul>
+          <li><a href="https://www.kika.de/" target="_blank" rel="noopener">KiKA</a></li>
+          <li><a href="https://www.ardmediathek.de/kika" target="_blank" rel="noopener">ARD Mediathek</a></li>
+          <li><a href="https://www.zdf.de/kinder" target="_blank" rel="noopener">ZDFtivi</a></li>
+          <li><a href="https://www.sandmann.de/" target="_blank" rel="noopener">Sandmann</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© Stellas Deutsch</span>
+    <span>Данные и изображения предоставлены TMDB. Каталог не связан с TMDB.</span>
+  </div>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal__bg"></div>
+  <div class="modal__win">
+    <button class="modal__close" aria-label="Закрыть">✕</button>
+    <div class="modal__grid">
+      <div class="modal__poster"><img id="m-poster" src="" alt=""></div>
+      <div class="modal__content">
+        <h2 id="m-title"></h2>
+        <p class="modal__orig" id="m-orig"></p>
+        <div class="modal__facts" id="m-facts"></div>
+        <p id="m-desc"></p>
+        <h4>Совет Stellas Deutsch</h4>
+        <div class="tipbox" id="m-tip"></div>
+        <h4>Грамматика и темы</h4>
+        <div class="card__tags" id="m-grammar"></div>
+        <h4>Лексика</h4>
+        <p id="m-vocab"></p>
+        <h4>Где смотреть</h4>
+        <div class="links" id="m-links"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+  document.getElementById('s-total2').textContent = document.getElementById('s-total').textContent;
+  document.getElementById('s-free2').textContent = document.getElementById('s-free').textContent;
+</script>
+</body>
+</html>
